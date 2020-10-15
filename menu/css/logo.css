@@ -5,12 +5,12 @@
 }
 
 .logo__image {
-    content: var(--binp-icon);
+    /* content: url('../figs/binplogo0.svg'); */
     height: 70px;
     margin-right: 5px;
 }
 
 .logo__title {
-    font: 1.7rem sans-serif;
+    font: 1.9rem sans-serif;
     margin: 0;
 }

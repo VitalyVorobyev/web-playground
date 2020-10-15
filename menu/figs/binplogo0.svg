@@ -1,6 +1,14 @@
-<svg xmlns:svg="http://www.w3.org/2000/svg" width="100px" height="120px" viewBox="0 0 100 117">
-   <path style="stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 91.77,118.36 -23.66,-37.87 -45.16,-0.08 3.85,6.34 h 38.79 l 19.61,31.59 z"/>
-   <path style="stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 99.9,118.36 h -5.66 l -24.75,-39.92 -47.69,0.01 -21.64,-35.17 3.95,0.01 22.53,27.04 h 47.04 l 26.22,41.73 z"/>
-   <path style="stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 99.9,107.85 v -10.29 l -16.43,-27.21 h -7.11 z"/>
-   <path style="stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 57.97,68.61 34.51,-34.80 -30.68,17.88 8.04,-20.87 -14.8466,17.09 -5.0,-48.42 -3.64,49.90 -8.58,-7.23 2.14,11.18 -34.27,-16.62 38.63,31.88 z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="100px" height="120px" viewBox="0 0 100 117">
+   <defs>
+      <linearGradient id="g1">
+         <stop style="stop-color:#f1010d" offset="0"/>
+         <stop style="stop-color:#eee416" offset="1"/>
+       </linearGradient>
+      <linearGradient xlink:href="#g1" id="g2" x1="51.39" y1="57.85" x2="50.88" y2="43.29" gradientUnits="userSpaceOnUse"/>
+   </defs>
+   <path style="fill:#1900d7;stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 91.77,118.36 -23.66,-37.87 -45.16,-0.08 3.85,6.34 h 38.79 l 19.61,31.59 z"/>
+   <path style="fill:#1900d7;stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 99.9,118.36 h -5.66 l -24.75,-39.92 -47.69,0.01 -21.64,-35.17 3.95,0.01 22.53,27.04 h 47.04 l 26.22,41.73 z"/>
+   <path style="fill:#1900d7;stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 99.9,107.85 v -10.29 l -16.43,-27.21 h -7.11 z"/>
+   <path style="fill:url(#g2);stroke:#000;stroke-width:0.3px;stroke-linecap:butt" d="m 57.97,68.61 34.51,-34.80 -30.68,17.88 8.04,-20.87 -14.8466,17.09 -5.0,-48.42 -3.64,49.90 -8.58,-7.23 2.14,11.18 -34.27,-16.62 38.63,31.88 z"/>
 </svg>

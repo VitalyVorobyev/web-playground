@@ -12,6 +12,6 @@ header {
     display: grid;
     grid-template-columns: 300px 1fr;
     margin: 0 auto;
-    max-width: 1050px;
+    max-width: 1150px;
     padding: 6px 30px;
 }

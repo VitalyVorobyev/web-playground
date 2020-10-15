@@ -7,12 +7,15 @@
     content: var(--home-icon);
     margin-right: 3px;
     white-space: nowrap;
+    display: inline-block;
+    transform: scale(0.8, 0.8) translateY(10%);
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
+    padding-top: 21px;
 }
 
 .menu__list {
@@ -66,7 +69,28 @@
         display: none;
     }
 
+    .menu__list.menu__list--open {
+        display: flex;
+        position: fixed;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 250px;
+        top: 82px;
+        right: 0;
+        height: 120px;
+        background-color: beige;
+    }
+
+    .menu__list.menu__list--open.logins {
+        border-top: 1px solid;
+        padding-top: 10px;
+        top: 202px;
+        height: 80px;
+    }
+
     .menu {
         justify-content: flex-end;
+        align-items: center;
+        padding: 0;
     }
 }
