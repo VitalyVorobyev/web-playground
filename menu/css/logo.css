@@ -1,0 +1,16 @@
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__image {
+    content: var(--binp-icon);
+    height: 70px;
+    margin-right: 5px;
+}
+
+.logo__title {
+    font: 1.7rem sans-serif;
+    margin: 0;
+}

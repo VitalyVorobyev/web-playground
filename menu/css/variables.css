@@ -1,4 +1,21 @@
 :root {
     --menu-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 44' width='64' height='32'><path d='M3,3h38m-38,19h38m-38,19h38M47,3,85,41M47,41,85,3' stroke='%23000' stroke-width='6' stroke-linecap='round'/></svg>");
-    --binp-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 117' width='100' height='120'><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 91.77,118.36 -23.66,-37.87 -45.16,-0.08 3.85,6.34 h 38.79 l 19.61,31.59 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 99.9,118.36 h -5.66 l -24.75,-39.92 -47.69,0.01 -21.64,-35.17 3.95,0.01 22.53,27.04 h 47.04 l 26.22,41.73 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 99.9,107.85 v -10.29 l -16.43,-27.21 h -7.11 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 57.97,68.61 34.51,-34.80 -30.68,17.88 8.04,-20.87 -14.8466,17.09 -5.0,-48.42 -3.64,49.90 -8.58,-7.23 2.14,11.18 -34.27,-16.62 38.63,31.88 z'/></svg>")
+    --binp-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 117' width='100' height='120'><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 91.77,118.36 -23.66,-37.87 -45.16,-0.08 3.85,6.34 h 38.79 l 19.61,31.59 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 99.9,118.36 h -5.66 l -24.75,-39.92 -47.69,0.01 -21.64,-35.17 3.95,0.01 22.53,27.04 h 47.04 l 26.22,41.73 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 99.9,107.85 v -10.29 l -16.43,-27.21 h -7.11 z'/><path style='stroke:%23000;stroke-width:0.3px;stroke-linecap:butt' d='m 57.97,68.61 34.51,-34.80 -30.68,17.88 8.04,-20.87 -14.8466,17.09 -5.0,-48.42 -3.64,49.90 -8.58,-7.23 2.14,11.18 -34.27,-16.62 38.63,31.88 z'/></svg>");
+    --home-icon: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 35 35' width='25px' height='23px'><path style='fill:%23999999;fill-opacity:1;stroke:none;' d='m 21.61,34.78 v -10.554986 l -7.946945,-0.02837 v 10.583333 h -10.602233 v -14.58 l 14.557145,-13.3 14.52,13.3 v 14.58 l -10.55,0 z'/><path style='fill:%23999999;fill-opacity:1;stroke:none;' d='m 35.1,20.22 2.38,-0.18 -5.29,-5.13 V 0.385 h -5.29 v 9.66 l -9.26,-8.36 -19.84,18.315 2.41,0.22 17.43,-15.9 z'/></svg>");
+
+    --basic-black: #000000;
+    --basic-dark: #273238;
+    --basic-semi-light: #696969;
+    --basic-neutral: #b1b3b6;
+    --basic-light: #e9eaeb;
+    --basic-white: #ffffff;
+
+    --special-extra-dark: #386d9b;
+    --special-dark: #3b84bb;
+    --special-dark-10a: rgb(59 132 187 / 0.1);
+    --special-semi-dark: #42a0da;
+    --special-neutral: #61afb4;
+    --special-semi-light: #81c36d;
+    --special-light: #afe63a;
+    --special-extra-light: #c6f523;
 }

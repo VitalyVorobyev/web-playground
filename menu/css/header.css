@@ -1,8 +1,17 @@
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 header {
     background-color: beige;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    margin: 0 auto;
+    max-width: 1050px;
+    padding: 6px 30px;
 }
