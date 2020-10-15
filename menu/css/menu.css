@@ -1,0 +1,19 @@
+@media (min-width: 420px) {
+    .menu__button {display: none;}
+}
+
+@media (max-width: 420px) {
+    .menu__button {
+        width: 46px;
+        height: 46px;
+        padding: 5px;
+    }
+    
+    .menu__button__icon {
+        width: 32px;
+        height: 32px;
+        background-image: var(--menu-icon);
+    }
+    
+    .menu__button__icon.cross {background-position: 32px 0;}
+}
