@@ -1,5 +1,89 @@
 @import 'menu.css';
 
-.jumbotron {
-    background: linear-gradient(225deg, #26dddf 0%, #ffc23d 100%);
+main {
+   padding: 10px; 
 }
+
+.jumbotron {
+    /* background: linear-gradient(225deg, #26dddf 0%, #ffc23d 100%); */
+    background: linear-gradient(225deg, rgba(172,255,250,1) 0%, rgba(255,215,164,1) 50%, rgba(170,213,255,1) 100%);
+    padding: 100px 8%;
+    max-width: 1150px;
+    min-width: 420px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px #303030;
+}
+
+.title {
+    font: 3.5rem sans-serif;
+    letter-spacing: 0.01em;
+    margin: 0;
+    padding: 0;
+    color: var(--special-extra-dark);
+}
+
+.subtitle {
+    font: 1.5rem sans-serif;
+    letter-spacing: 0.02em;
+    margin: 0;
+    padding: 0;
+    padding-left: 1.4em;
+    color: var(--basic-dark);
+}
+
+.sections__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    max-width: 1150px;
+    min-width: 420px;
+    margin: 20px auto;
+}
+
+@media (min-width: 950px) {
+    .sections__container {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 950px) {
+    .sections__container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .sections__container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section::first-letter {
+    color: var(--special-extra-dark);
+}
+
+.btn-grad {background-image: linear-gradient(to right, #f9ffc5 0%, #d4f3f1  51%, #d2fff4  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 25px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.2s;
+   background-size: 200% auto;
+   color: var(--special-dark);
+   box-shadow: 0 0 8px var(--special-dark);
+   border-radius: 10px;
+   display: block;
+   cursor: pointer;
+   font: 1.3rem sans-serif;
+   letter-spacing: 0.03em;
+   border: none;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; /* change the direction of the change here */
+   color: var(--special-light);
+   text-decoration: none;
+ }
