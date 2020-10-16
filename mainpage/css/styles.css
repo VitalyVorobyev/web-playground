@@ -1,0 +1,5 @@
+@import 'menu.css';
+
+.jumbotron {
+    background: linear-gradient(225deg, #26dddf 0%, #ffc23d 100%);
+}
