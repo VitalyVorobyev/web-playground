@@ -6,18 +6,24 @@
     <link rel="stylesheet" href="css/styles.css" class="style">
     <title>SCT Experiment</title>
 </head>
+
 <body>
     <header>
         <div class="header__menu">
             <div class="header__logo">
                 <img src="figs/binplogo0.svg" alt="" class="logo__image">
-                <!-- <img src="figs/sctlogo3.svg" alt="" class="logo__image"> -->
                 <p class="logo__title">SCT Experiment</p>
             </div>
             <nav class="menu">
                 <button class="menu__button" type="button">
-                    <div class="menu__button__icon"></div>
-                    <!-- <div class="menu__button__icon cross"></div> -->
+                    <svg class="menu__icon" xmlns="http://www.w3.org/2000/svg" width="0", height="0">
+                        <symbol id="lines" viewBox="0 0 44 44"><path d="M3,3h38m-38,19h38m-38,19h38" style="stroke-width:3;stroke-linecap:round"/></symbol>
+                        <symbol id="cross" viewBox="0 0 44 44"><path d="M3,3,41,41M3,41,41,3" style="stroke-width:3;stroke-linecap:round"/></symbol>
+                    </svg>
+                    <svg class="menu__button__icon">
+                        <use class="menu__button__lines" href="#lines"></use>
+                        <use class="menu__button__cross" href="#cross"></use>
+                    </svg>
                 </button>
                 <ul class="menu__list" id="menu__list">
                     <li class="menu__item">
