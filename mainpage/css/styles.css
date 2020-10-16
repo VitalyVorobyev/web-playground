@@ -62,6 +62,8 @@ main {
 
 .section::first-letter {
     color: var(--special-extra-dark);
+    font-weight: bold;
+    font-size: larger;
 }
 
 .btn-grad {background-image: linear-gradient(to right, #f9ffc5 0%, #d4f3f1  51%, #d2fff4  100%)}
