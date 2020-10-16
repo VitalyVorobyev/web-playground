@@ -5,8 +5,8 @@
 }
 
 .logo__image {
-    /* content: url('../figs/binplogo0.svg'); */
-    height: 70px;
+    width: 60px;
+    max-height: 60px;
     margin-right: 5px;
 }
 

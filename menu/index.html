@@ -8,11 +8,10 @@
 </head>
 <body>
     <header>
-        <div class="header">
+        <div class="header__menu">
             <div class="header__logo">
-                <!-- <img class="logo__image" src="figs/binplogo0.svg" alt=""> -->
-                <!-- <img class="logo__image" alt=""> -->
-                <img src="figs/binplogo2.svg" alt="" class="logo__image">
+                <img src="figs/binplogo0.svg" alt="" class="logo__image">
+                <!-- <img src="figs/sctlogo3.svg" alt="" class="logo__image"> -->
                 <p class="logo__title">SCT Experiment</p>
             </div>
             <nav class="menu">
@@ -20,7 +19,7 @@
                     <div class="menu__button__icon"></div>
                     <!-- <div class="menu__button__icon cross"></div> -->
                 </button>
-                <ul class="menu__list menu__list--open" id="menu__list">
+                <ul class="menu__list" id="menu__list">
                     <li class="menu__item">
                         <a class="menu__link menu__link--home menu__link--current" href="#">Home</a>
                     </li>
@@ -31,16 +30,24 @@
                         <a class="menu__link" href="#">Cremlinplus</a>
                     </li>
                 </ul>
-                <ul class="menu__list menu__list--open logins">
-                    <li class="menu__item login__info__item">
-                        <a class="menu__link" href="#">Register</a>
-                    </li>
-                    <li class="menu__item login__info__item">
-                        <a class="menu__link" href="#">Login</a>
-                    </li>
-                </ul>
+                <div class="menu__list logins">
+                    <a class="menu__link" href="#">Register</a>
+                    <a class="menu__link" href="#">Login</a>
+                </div>
             </nav>
         </div>
     </header>
+    
+    <script>
+        (() => {
+            const menuButton = document.querySelector('.menu__button');
+            const menu = document.querySelector('.menu');
+
+            menuButton.addEventListener('click', () => {
+                menuButton.classList.toggle('expanded');
+                menu.classList.toggle('menu--open');
+            });
+        })();
+    </script>
 </body>
 </html>

@@ -6,16 +6,12 @@
 .menu__link--home::before {
     content: var(--home-icon);
     margin-right: 3px;
-    white-space: nowrap;
-    display: inline-block;
-    transform: scale(0.8, 0.8) translateY(10%);
 }
 
 .menu {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
-    padding-top: 21px;
+    align-items: center;
 }
 
 .menu__list {
@@ -26,16 +22,12 @@
     padding: 0;
 }
 
-.menu__item {
-    margin: 0 10px;
-}
-
-
 .menu__link {
     color: var(--basic-dark);
     text-decoration: none;
     font: 1.4rem sans-serif;
     letter-spacing: 0.02em;
+    margin: 0 10px;
 }
 
 .menu__link--current {
@@ -62,29 +54,28 @@
         height: 32px;
         background-image: var(--menu-icon);
     }
-    
-    .menu__button__icon.cross {background-position: 32px 0;}
 
-    .menu__list {
-        display: none;
+    .menu__button.expanded .menu__button__icon {
+        background-position: 32px 0;
     }
 
-    .menu__list.menu__list--open {
+    .menu__list {display: none;}
+
+    .menu--open .menu__list {
         display: flex;
         position: fixed;
         flex-direction: column;
         justify-content: space-around;
         width: 250px;
-        top: 82px;
-        right: 0;
+        top: 72px;
         height: 120px;
         background-color: beige;
     }
 
-    .menu__list.menu__list--open.logins {
+    .menu--open .menu__list.logins {
         border-top: 1px solid;
         padding-top: 10px;
-        top: 202px;
+        top: 192px;
         height: 80px;
     }
 

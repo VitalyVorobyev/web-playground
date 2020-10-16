@@ -6,9 +6,10 @@ body {
 
 header {
     background-color: beige;
+    min-width: 420px;
 }
 
-.header {
+.header__menu {
     display: grid;
     grid-template-columns: 300px 1fr;
     margin: 0 auto;
