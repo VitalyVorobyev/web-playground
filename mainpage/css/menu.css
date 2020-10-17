@@ -88,11 +88,11 @@ header {
     align-items: center;
 }
 
-@media (min-width: 913px) {
+@media (min-width: 930px) {
     .menu__button {display: none;}
 }
 
-@media (max-width: 912px) {
+@media (max-width: 929px) {
     .menu__button {
         width: 46px;
         height: 46px;

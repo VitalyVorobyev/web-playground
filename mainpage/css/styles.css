@@ -1,5 +1,11 @@
 @import 'menu.css';
 
+body {
+    display: grid;
+    grid-template-rows: max-content max-content 1fr max-content;
+    min-height: 100vh;
+}
+
 main {
    padding: 10px; 
 }
@@ -108,12 +114,12 @@ main {
 /* Footer */
 
 .footer {
-    display: grid;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
     max-width: 1150px;
-    margin: 20px auto;
-    padding: 5px;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 50px;
+    margin: 20px auto 10px;
+    padding: 5px 20px;
     border-top: 1px solid;
     box-sizing: border-box;
 }
@@ -126,4 +132,9 @@ main {
 .email {
     text-decoration: none;
     color: var(--special-extra-dark)
+}
+
+.email::before {
+    content: "\1F4E8";
+    margin-right: 3px;
 }
