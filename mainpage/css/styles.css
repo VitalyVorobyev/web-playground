@@ -19,6 +19,7 @@ main {
     padding: 0;
     color: var(--special-extra-dark);
     text-shadow: 2px 2px 2px var(--basic-neutral);
+    caret-color: transparent;
 }
 
 .subtitle {
@@ -28,6 +29,7 @@ main {
     padding: 0;
     padding-left: 1.4em;
     color: var(--basic-dark);
+    caret-color: transparent;
 }
 
 .sections__container {
@@ -70,6 +72,7 @@ main {
 
 .btn-grad {background-image: linear-gradient(to right, #f9ffc5 0%, #d4f3f1  51%, #d2fff4  100%)}
 .btn-grad {
+    caret-color: transparent;
     padding: 25px 45px;
     box-sizing: border-box;
     text-decoration: none;
