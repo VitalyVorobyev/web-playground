@@ -111,6 +111,8 @@ header {
     .menu__button__lines,
     .menu__button__cross {
         stroke: var(--basic-dark);
+        stroke-width: 3;
+        stroke-linecap: round;
     }
 
     .menu__button:hover {cursor: pointer;}
