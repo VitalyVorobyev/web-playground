@@ -9,6 +9,9 @@ body {
 
 main {
    padding: 0 10px; 
+   margin: 0 auto;
+   max-width: 1150px;
+   width: 100%;
 }
 
 /* Jumbotron */
@@ -16,7 +19,7 @@ main {
 .jumbotron {
     background: linear-gradient(225deg, rgba(172,255,250,1) 0%, rgba(255,215,164,1) 50%, rgba(170,213,255,1) 100%);
     min-width: 420px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     box-sizing: border-box;
     border-radius: 10px;
     position: relative;
@@ -78,7 +81,7 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
-    max-width: 1150px;
+    /* max-width: 1150px; */
     min-width: 320px;
     margin: 16px auto;
 }
@@ -86,7 +89,7 @@ main {
 @media (min-width: 950px) {
     .jumbotron {
         padding: 100px 120px;
-        max-width: 1150px;
+        /* max-width: 1150px; */
     }
 
     .sections__container {
