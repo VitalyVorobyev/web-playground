@@ -1,0 +1,7 @@
+
+.img__top__right {
+    display: grid;
+    grid-template: "text1 scheme" "text2 text2";
+    grid-template-columns: 14fr 16fr;
+    grid-gap: 10px
+}

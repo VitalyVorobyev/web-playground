@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css" class="style">
-    <title>SCT Experiment</title>
+    <link rel="stylesheet" href="css/detector.css" class="style">
+    <title>SCT Detector</title>
 </head>
-
 <body>
     <header>
         <div class="header__menu">
@@ -27,7 +26,7 @@
                 </button>
                 <ul class="menu__list" id="menu__list">
                     <li class="menu__item">
-                        <a class="menu__link menu__link--home menu__link--current" href="index.html">Home</a>
+                        <a class="menu__link menu__link--home" href="index.html">Home</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link menu__link--inactive" href="#">Internal</a>
@@ -45,23 +44,14 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1 class="title">Super Charm Tau Factory</h1>
-            <h2 class="subtitle">Electron-positron collider for studying charmed hadrons and tau lepton</h2>
-            <div class="cdr__links">
-                <p class="cdr__title">CDR [pdf]</p>
-                <a href="#" class="cdr__link cdr__link1">vol. 1</a>
-                <a href="#" class="cdr__link cdr__link2">vol. 2</a>
-            </div>
-        </div>
-        <div class="sections__container">
-            <a class="btn-grad" href="#">Physics</a>
-            <a class="btn-grad" href="detector.html">Detector</a>
-            <a class="btn-grad" href="collider.html">Collider</a>
-            <a class="btn-grad" href="#">Software</a>
-            <a class="btn-grad" href="#">Publications</a>
-            <a class="btn-grad" href="#">Collaboration</a>
-        </div>
+        <h1 class="hdr hdr1">Detector concept</h1>
+        <article class="article">
+            <figure class="rfloat">
+                <img id="sctd__scheme" src="figs/sctd.jpg" alt="SCT detector concept" title="SCT detector concept">
+                <figcaption class="figcaption">Fig. 1. SCT detector concept</figcaption>
+            </figure>
+            <p>Some text</p>
+        </article>
     </main>
 
     <footer class="footer">

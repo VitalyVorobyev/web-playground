@@ -1,70 +1,14 @@
 @import 'styles.css';
 
-main {
-    font-size: 1.5rem;
-}
-
-.hdr {
-    letter-spacing: 0.01em;
-    margin: 20px 0;
-    padding: 0;
-    color: var(--special-extra-dark);
-    text-shadow: 1px 1px 2px var(--basic-neutral);
-    caret-color: transparent;
-}
-
-.hdr1 {font: 2.5rem sans-serif;}
-.hdr2 {font: 2.0rem sans-serif;}
-
-.sec__sctf {
-    display: grid;
-    grid-template: "text1 scheme" "text2 text2";
-    grid-template-columns: 14fr 16fr;
-    grid-gap: 10px
-}
-
-figure {
-    margin: 0;
-    display: block;
-    text-align: center;
-    border: 1px solid var(--special-extra-dark);
-    border-radius: 30px;
-    padding: 2px;
-    box-shadow: 1px 1px 3px var(--basic-neutral);
-    width: fit-content;
-}
-
-.figcaption {
-    font-size: 1.2rem;
-    margin-bottom: 6px;
-}
-
-.sctf__scheme {
-    width: 80%;
-}
-
-li {font-size: 1.5rem;}
-
-.main_text,
-.ol_text,
-.ul_text {
-    font: 1.5rem serif;
-    margin: 16px 0;
-    letter-spacing: 0.01em;
-}
 
 .main_text::first-line {
     text-indent: 1em;
 }
 
-
-/* Table */
-
-.table {
-    width: 80%;
-    margin: 10px auto;
+#sctf__scheme {
+    width: 90%;
 }
 
-.text-center {
-    text-align: center;
+.article {
+    overflow: hidden; /* Prevents img outside */
 }
