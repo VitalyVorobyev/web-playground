@@ -2,18 +2,20 @@
 
 body {
     display: grid;
-    grid-template-rows: max-content max-content 1fr max-content;
+    /* grid-template-rows: max-content max-content 1fr; */
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
     min-height: 100vh;
 }
 
 main {
-   padding: 10px; 
+   padding: 0 10px; 
 }
 
 .jumbotron {
     background: linear-gradient(225deg, rgba(172,255,250,1) 0%, rgba(255,215,164,1) 50%, rgba(170,213,255,1) 100%);
     min-width: 420px;
-    margin: 10px auto;
+    margin: 0 auto;
     box-sizing: border-box;
     border-radius: 10px;
 }
@@ -44,7 +46,7 @@ main {
     grid-gap: 20px;
     max-width: 1150px;
     min-width: 320px;
-    margin: 20px auto;
+    margin: 16px auto;
 }
 
 @media (min-width: 950px) {
@@ -122,6 +124,7 @@ main {
     padding: 5px 20px;
     border-top: 1px solid;
     box-sizing: border-box;
+    align-self: baseline;
 }
 
 .address {
