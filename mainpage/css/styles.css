@@ -2,7 +2,6 @@
 
 body {
     display: grid;
-    /* grid-template-rows: max-content max-content 1fr; */
     grid-template-rows: auto 1fr auto;
     grid-gap: 10px;
     min-height: 100vh;
@@ -12,12 +11,15 @@ main {
    padding: 0 10px; 
 }
 
+/* Jumbotron */
+
 .jumbotron {
     background: linear-gradient(225deg, rgba(172,255,250,1) 0%, rgba(255,215,164,1) 50%, rgba(170,213,255,1) 100%);
     min-width: 420px;
     margin: 0 auto;
     box-sizing: border-box;
     border-radius: 10px;
+    position: relative;
 }
 
 .title {
@@ -39,6 +41,38 @@ main {
     color: var(--basic-dark);
     caret-color: transparent;
 }
+
+.cdr__links {
+    display: grid;
+    grid-gap: 6px;
+    grid-template: "title title" "vol1 vol2";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    padding: 8px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.cdr__title {
+    grid-area: title;
+    margin: 0 auto;
+    color: var(--basic-dark);
+    font-size: 1.2em;
+}
+
+.cdr__link {
+    text-decoration: none;
+    color: var(--special-extra-dark);
+    font-size: 1.1em;
+    margin: 0 4px;
+}
+
+.cdr-link1 {grid-area: vol1;}
+.cdr-link1 {grid-area: vol2;}
+
+/* Sections */
 
 .sections__container {
     display: grid;
@@ -71,7 +105,7 @@ main {
 
 @media (max-width: 650px) {
     .jumbotron {
-        padding: 40px;
+        padding: 40px 40px 80px;
     }
     .sections__container {
         grid-template-columns: 1fr;

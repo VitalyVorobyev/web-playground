@@ -92,7 +92,7 @@
 
     .menu--open .menu__list {
         display: flex;
-        position: fixed;
+        position: absolute;
         flex-direction: column;
         justify-content: space-around;
         width: 250px;
