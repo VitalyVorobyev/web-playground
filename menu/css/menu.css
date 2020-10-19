@@ -113,4 +113,31 @@
         align-items: center;
         padding: 0;
     }
+
+    /* .menu--open .menu__list:before {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border: 1px solid #e5a002;
+        border-radius: 2px;
+        box-sizing: border-box;
+        clip-path: polygon(0% 105%, 0% 0%, 105% 0%, 105% 105%, 43px 105%, 43px 80%, 21px 80%, 21px 105%);
+      } */
+    .menu--open .menu__list:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 25px;
+        height: 20px;
+        background: #3a3937;
+        top: -20px;
+        right: 20px;
+        box-sizing: border-box;
+        clip-path: polygon(0 0, 0% 100%, 100% 0%, calc(100% - 2px) 0, 1px calc(100% - 2px), 1px 0);
+        transform: scale(-1, -1);
+      }
 }

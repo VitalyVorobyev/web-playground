@@ -159,3 +159,9 @@ p {
     font-weight: bold;
     font-size: larger;
 }
+
+/* Text decoration */
+
+.overline {
+    text-decoration: overline;
+}

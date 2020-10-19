@@ -4,9 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css" class="style">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>SCT Software</title>
 </head>
 <body>
-    
+    <header>
+        <div class="header__menu">
+            <div class="header__logo">
+                <img src="figs/binplogo0.svg" alt="" class="logo__image">
+                <p class="logo__title">SCT Experiment</p>
+            </div>
+            <nav class="menu">
+                <button class="menu__button" type="button">
+                    <svg class="menu__icon" xmlns="http://www.w3.org/2000/svg" width="0", height="0">
+                        <symbol id="lines" viewBox="0 0 44 44"><path d="M3,3h38m-38,19h38m-38,19h38"/></symbol>
+                        <symbol id="cross" viewBox="0 0 44 44"><path d="M3,3,41,41M3,41,41,3"/></symbol>
+                    </svg>
+                    <svg class="menu__button__icon">
+                        <use class="menu__button__lines" href="#lines"></use>
+                        <use class="menu__button__cross" href="#cross"></use>
+                    </svg>
+                </button>
+                <ul class="menu__list" id="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--home" href="index.html">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--inactive" href="#">Internal</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">Cremlinplus</a>
+                    </li>
+                </ul>
+                <div class="menu__list logins">
+                    <a class="menu__link" href="#">Register</a>
+                    <a class="menu__link" href="#">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="hdr hdr1">SCT Detector Software</h1>
+        <section id="intro">
+            <h2 class="hdr hdr2">Introduction</h2>
+            <p>Super charm-tau factory is a symmetric electron-positron collider with a single collision point operating in the energy range between \(\sqrt{s}=2\) and \(6~\mathrm{GeV}\). This energy range covers the charmonium family (including the \(J^{PC}=1^{--}\) states \(J/\psi\), \(\psi(2S)\), \(\psi(3770)\) and others that can be produced directly), several open charm hadrons thresholds (\(D^{(*)0}\overline{D}{}^{(*)0}\), \(D^{(*)+}D^{(*)-}\), \(\Lambda_c\overline{\Lambda}_c\) etc.) and the \(\tau\) lepton threshold, providing the rich physics program. Projected luminosity of the collider is \(10^{35}~\mathrm{cm}^{-2}\mathrm{s}^{-1}\). Maximal event rate to deliver in the data storage is expected to be more than \(350~\mathrm{kHz}\) for operation at the \(J/\psi\) resonance.</p>
+            <p>The collision point is equipped with a universal nparticle detector covering nearly full solid angle. It contains all traditional subsystems:</p>
+            <ul>
+                <li>tracking system composed of the drift chamber and inner tracker. Two alternative technologies for the inner tracker are under discussion: time projection chamber (TPC) and cylindrical gas electron multiplier (cGEM);</li>
+                <li>charged particles identification system, Cherenkov-based and time-of-flight solutions are under consideration;</li>
+                <li>calorimeter. Pure CsI crystal calorimeter is the baseline option;</li>
+                <li>muon system. A scintillator counter system similar to the Belle II KLM is considered as a suitable technology;</li>
+                <li>superconducting coil providing uniform magnetic field of about \(1.5~\mathrm{T}\) in the tracker.</li>
+            </ul>
+            <p>From the software point of view, the SCT experiment is a typical heavy flavor factory experiment. It requires a complete stack of relevant software, including</p>
+            <ul>
+                <li>software framework</li>
+                <li>event generators</li>
+                <li>full detector simulation</li>
+                <li>event reconstruction algorithms</li>
+                <li>online event interpretation for trigger decisions</li>
+                <li>event data model (EDM)</li>
+                <li>I/O interface to conditions data base</li>
+                <li>I/O interface to data storage</li>
+                <li>offline data analysis algorithms</li>
+                <li>build system and release management software</li>
+            </ul>
+            <p>Main relations between the components of detector software are illustrated in scheme</p>
+            <p>Large data flow and large volume of stored data are expected during operation of the experiment. It imposes strict requirement on the SCT EDM. It should be carefully designed to provide fast I/O, optimal event size and standardized interface for the data analysis algorithms.</p>
+            <p>We adopt the following guiding principles to work on the detector software:</p>
+            <ol>
+                <li>Rely on trusted existing solution where it is possible.</li>
+                <li>Follow the best practices of collaborative software development, including the code style guidance and code reviewing procedure.</li>
+                <li>Be in touch with and contribute to the global community of the detector software developers.</li>
+            </ol>
+        </section>
+
+        <section>
+            <h2 class="hdr hdr2">The framework</h2>
+        </section>
+The SCT detector software framework is based on \texttt{Gaudi}~\cite{gaudi} and has name \texttt{Aurora}. It covers all the aspects of software components interaction at runtime, including configuration, data exchange and scheduling. 
+
+The framework architecture follows the traditional scheme: data store, algorithms, tools.
+
+Tools and algorithms are implemented with C++. Python is used for configuration and steering scripts.
+
+%%%           Event Data Model        %%%
+\section{Event Data Model}\label{sec:edm}
+The SCT detector event data model is implemented as C++ plain-old-data (POD) objects. Data persistence is implemented via the \texttt{ROOT}\cite{root} \texttt{TTree} format. This format provides fast and straightforward I/O interface.
+
+The EDM objects are defined in a single \texttt{yaml}\cite{yaml} file. \texttt{PODIO}\cite{podio} package is used to generate actual C++ classes. Described scheme is embedded in the \texttt{Aurora} framework via the \texttt{DataModel} package.
+
+
+%%%    Event Generators   %%%
+\section{Event Generators}\label{sec:gen}
+The required set of event generators should provide a reasonable description of~$e^+e^-$ interactions in the energy range between~$2$ and~$6~\mathrm{GeV}$. Generators can be divided into three categories
+\begin{enumerate}
+    \item Exclusive decays of hadrons and tau lepton. The \texttt{EvtGen}\cite{evtgen} generator covers the decays of hadrons, and the \texttt{KKMC}\cite{kkmc} and \texttt{Tauola}\cite{tauola} generators cover the decays of tau leptons. Final-state-radiation is simulated by the \texttt{PHOTOS}\cite{photos} package. Inclusive fraction of charmonia decays is simulated with \texttt{Pythia}\cite{pythia} generator.
+    \item Inclusive generators for~$e^+e^-\to \mathrm{hadrons}$. This is the most challenging part of event generation since inclusive generators like \texttt{Pythia} do not work well at these energies. Experimental input is required and careful parameter tuning is to be done for different energy points. Measurement of $e^+e^-\to \mathrm{hadrons}$ is an important task by itself. Besides that, a good description of the light quark hadronization is important to understand the background for charmed hadrons decays.
+    \item Dedicated generators for luminosity measurements and calibrations: Bhabha scattering, $e^+e^-\to2\gamma$ and some other processes. An important point here is proper accounting for the electron beam polarization for high-precision measurements. Generator \texttt{MCGPJ}\cite{mcgpj}
+\end{enumerate}
+
+A uniform interface to all generators is going to be developed within the \texttt{EvtGen}. 
+
+Output of the primary event generators is expected to be in the \texttt{HepMC3}\cite{hepmc3} format. A dedicated \texttt{Aurora} algorithm converts events data from \texttt{HepMC3} 
+format to \texttt{SCT EDM} and stores them on disc or feed them in the detector simulation algorithm.
+
+%%%  Detector geometry description  %%%
+\section{Detector geometry description}\label{sec:geom}
+A uniform detector geometry description should be provided for all software modules.
+Each detector subsystem will have a corresponding geometry software package, or, in case of several options,
+a separate package for each option. The packages are to be implemented by subsystems experts.
+
+The \texttt{DD4Hep}\cite{dd4hep} toolkit is our choice for this task. 
+
+%%%    Detector response simulation   %%%
+\section{Detector response simulation}\label{sec:sim}
+The detector simulation program uses \texttt{Geant4}\cite{geant} for particle propagation and hit generation.
+\texttt{DD4Hep} provides a special tool \texttt{DDG4} to supply the uniformed geometry description
+to \texttt{Geant4}.
+
+Digitization, i. e. conversion of hits generated by \texttt{Geant4} to a form of data read 
+from real detector hardware,
+is performed by ad-hoc algorithms developed by subsystems experts.
+If possible, the algorithms could be based on methods provided by \texttt{DD4Hep}.
+(Backward contribution to \texttt{DD4Hep} is also expected here.)
+
+%%%     Calibration and Conditions      %%%
+\section{Calibrations and Conditions databases}
+Database interfaces are going to be based on Gaudi.
+The concrete details of realization are not chosen at the moment.
+
+%%%        Event reconstruction        %%%
+\section{Event reconstruction}\label{sec:reco}
+The \texttt{DD4Hep} will be used in reconstruction algorithms as a geometry provider.
+
+Each subsystem group should provide a reconstruction package for its subsystem.
+Among the options for the track reconstruction package 
+\texttt{GenFit}\cite{genfit} and \texttt{ACTS}\cite{acts} are considered at the moment.
+
+Calorimeter reconstruction is based on a generic topo-cluster technique.
+
+There is no final solution yet for Cherenkov light rings reconstruction. Various algorithms including 
+parallel processing at FPGA are under investigation.
+
+%%%  Parametric detector model %%%
+\section{Parametric detector model}\label{sec:param}
+Standalone \texttt{python} package \texttt{SctParSim} is being developed for SCT detector parametric simulation. It supports SCT \texttt{EDM} and depends only on standard \texttt{python} libraries \texttt{numpy} and \texttt{matplotlib}.
+
+\section{Event display}
+The \texttt{DD4Hep} component \texttt{DDEve} is used as a base for Event and Detector Geometry
+Display tool. It allows to draw a 3D-view or 2D cross sections of the detector and its subsystems,
+simulated particle tracks and hits, real hits read from the detector (in future), reconstructed
+objects, etc. 
+
+%%% Offline data analysis %%%
+\section{Offline data analysis}\label{sec:analysis}
+Set of high quality offline data analysis tools is a crucial condition for getting the proper physics yield from the experiment. Closeness of experimental conditions of the Belle II detector and advanced level of analysis software in this experiment is a perfect opportunity for SCT experiment to benefit from existing solutions. Belle II collaboration kindly gave us access to their source code. We work on adaptation of the Belle II analysis software to the SCT experiment.
+
+
+\section{Build and version control systems}
+Build system of the software stack is based on a similar one from the ATLAS\cite{ATLAS}
+experiment. External standard HEP packages are build using LCGCMake\cite{lcgcmake} infrastructure.
+The software development workflow utilizes
+\texttt{GitLab}\cite{gitlib} as a version control system.
+At some point a continuous integration mechanism (most likely, GitLab-based)
+allowing regular test builds and merge requests processing
+is going to be introduced.
+    </main>
+
+    <footer class="footer">
+        <div class="copyright">&copy; BINP 2020</div>
+        <div class="contacts">
+            <a href="mailto:mailme@inp.nsk.su" class="email">Contact us</a>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            const menuButton = document.querySelector('.menu__button');
+            const menu = document.querySelector('.menu');
+
+            menuButton.addEventListener('click', () => {
+                menuButton.classList.toggle('expanded');
+                menu.classList.toggle('menu--open');
+            });
+        })();
+    </script>
+
 </body>
 </html>
