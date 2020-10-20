@@ -83,99 +83,77 @@
 
         <section>
             <h2 class="hdr hdr2">The framework</h2>
+            <p>The SCT detector software framework is based on <span class="package_name">Gaudi</span> and has name <span class="package_name">Aurora</span>. It covers all the aspects of software components interaction at runtime, including configuration, data exchange and scheduling.</p>
+            <p>The framework architecture follows the traditional scheme: data store, algorithms, tools.</p>
+            <p>Tools and algorithms are implemented with C++. Python is used for configuration and steering scripts.</p>
         </section>
-The SCT detector software framework is based on \texttt{Gaudi}~\cite{gaudi} and has name \texttt{Aurora}. It covers all the aspects of software components interaction at runtime, including configuration, data exchange and scheduling. 
 
-The framework architecture follows the traditional scheme: data store, algorithms, tools.
+        <section id="edm">
+            <h2 class="hdr hdr2">Event Data Model</h2>
+            <p>The SCT detector event data model is implemented as C++ plain-old-data (POD) objects. Data persistence is implemented via the \texttt{ROOT}\cite{root} \texttt{TTree} format. This format provides fast and straightforward I/O interface.</p>
+            <p>The EDM objects are defined in a single \texttt{yaml}\cite{yaml} file. \texttt{PODIO}\cite{podio} package is used to generate actual C++ classes. Described scheme is embedded in the \texttt{Aurora} framework via the \texttt{DataModel} package.</p>
+        </section>
 
-Tools and algorithms are implemented with C++. Python is used for configuration and steering scripts.
+        <section id="gen">
+            <h2 class="hdr hdr2">Event Generators</h2>
+            <p>The required set of event generators should provide a reasonable description of \(e^+e^-\) interactions in the energy range between \(2\) and \(6~\mathrm{GeV}\). Generators can be divided into three categories</p>
+            <ol>
+                <li>Exclusive decays of hadrons and tau lepton. The <span class="package_name">EvtGen</span> generator covers the decays of hadrons, and the <span class="package_name">KKMC</span> and <span class="package_name">Tauola</span> generators cover the decays of tau leptons. Final-state-radiation is simulated by the <span class="package_name">PHOTOS</span> package. Inclusive fraction of charmonia decays is simulated with <span class="package_name">Pythia</span> generator.</li>
+                <li>Inclusive generators for \(e^+e^-\to \mathrm{hadrons}\). This is the most challenging part of event generation since inclusive generators like <span class="package_name">Pythia</span> do not work well at these energies. Experimental input is required and careful parameter tuning is to be done for different energy points. Measurement of \(e^+e^-\to \mathrm{hadrons}\) is an important task by itself. Besides that, a good description of the light quark hadronization is important to understand the background for charmed hadrons decays.</li>
+                <li>Dedicated generators for luminosity measurements and calibrations: Bhabha scattering, \(e^+e^-\to2\gamma\) and some other processes. An important point here is proper accounting for the electron beam polarization for high-precision measurements. Generator <span class="package_name">MCGPJ</span></li>
+            </ol>
+            <p>A uniform interface to all generators is going to be developed within the <span class="package_name">EvtGen</span>.</p>
+            <p>Output of the primary event generators is expected to be in the <span class="package_name">HepMC3</span> format. A dedicated <span class="package_name">Aurora</span> algorithm converts events data from <span class="package_name">HepMC3</span> format to <a href="#edm">SCT EDM</a> and stores them on disc or feed them in the detector simulation algorithm.</p>
+        </section>
 
-%%%           Event Data Model        %%%
-\section{Event Data Model}\label{sec:edm}
-The SCT detector event data model is implemented as C++ plain-old-data (POD) objects. Data persistence is implemented via the \texttt{ROOT}\cite{root} \texttt{TTree} format. This format provides fast and straightforward I/O interface.
+        <section id="geom">
+            <h2 class="hdr hdr2">Detector geometry description</h2>
+            <p>A uniform detector geometry description should be provided for all software modules. Each detector subsystem will have a corresponding geometry software package, or, in case of several options, a separate package for each option. The packages are to be implemented by subsystems experts.</p>
+            <p>The <span class="package_name">DD4Hep</span> toolkit is our choice for this task.</p>
+        </section>
 
-The EDM objects are defined in a single \texttt{yaml}\cite{yaml} file. \texttt{PODIO}\cite{podio} package is used to generate actual C++ classes. Described scheme is embedded in the \texttt{Aurora} framework via the \texttt{DataModel} package.
+        <section id="sim">
+            <h2 class="hdr hdr2">Detector response simulation</h2>
+            <p>The detector simulation program uses <span class="package_name">Geant4</span> for particle propagation and hit generation. <span class="package_name">DD4Hep</span> provides a special tool <span class="package_name">DDG4</span> to supply the uniformed geometry description to <span class="package_name">Geant4</span>.</p>
+            <p>Digitization, i. e. conversion of hits generated by <span class="package_name">Geant4</span> to a form of data read from real detector hardware, is performed by ad-hoc algorithms developed by subsystems experts. If possible, the algorithms could be based on methods provided by <span class="package_name">DD4Hep</span>. (Backward contribution to <span class="package_name">DD4Hep</span> is also expected here.)</p>
+        </section>
 
+        <section>
+            <h2 class="hdr hdr2">Calibrations and Conditions databases</h2>
+            <p>Database interfaces are going to be based on Gaudi. The concrete details of realization are not chosen at the moment.</p>
+        </section>
 
-%%%    Event Generators   %%%
-\section{Event Generators}\label{sec:gen}
-The required set of event generators should provide a reasonable description of~$e^+e^-$ interactions in the energy range between~$2$ and~$6~\mathrm{GeV}$. Generators can be divided into three categories
-\begin{enumerate}
-    \item Exclusive decays of hadrons and tau lepton. The \texttt{EvtGen}\cite{evtgen} generator covers the decays of hadrons, and the \texttt{KKMC}\cite{kkmc} and \texttt{Tauola}\cite{tauola} generators cover the decays of tau leptons. Final-state-radiation is simulated by the \texttt{PHOTOS}\cite{photos} package. Inclusive fraction of charmonia decays is simulated with \texttt{Pythia}\cite{pythia} generator.
-    \item Inclusive generators for~$e^+e^-\to \mathrm{hadrons}$. This is the most challenging part of event generation since inclusive generators like \texttt{Pythia} do not work well at these energies. Experimental input is required and careful parameter tuning is to be done for different energy points. Measurement of $e^+e^-\to \mathrm{hadrons}$ is an important task by itself. Besides that, a good description of the light quark hadronization is important to understand the background for charmed hadrons decays.
-    \item Dedicated generators for luminosity measurements and calibrations: Bhabha scattering, $e^+e^-\to2\gamma$ and some other processes. An important point here is proper accounting for the electron beam polarization for high-precision measurements. Generator \texttt{MCGPJ}\cite{mcgpj}
-\end{enumerate}
+        <section id="reco">
+            <h2 class="hdr hdr2">Event reconstruction</h2>
+            <p>The <span class="package_name">DD4Hep</span> will be used in reconstruction algorithms as a geometry provider.</p>
+            <p>Each subsystem group should provide a reconstruction package for its subsystem. Among the options for the track reconstruction package <span class="package_name">GenFit</span> and <span class="package_name">ACTS</span> are considered at the moment.</p>
+            <p>Calorimeter reconstruction is based on a generic topo-cluster technique.</p>
+            <p>There is no final solution yet for Cherenkov light rings reconstruction. Various algorithms including parallel processing at FPGA are under investigation.</p>
+        </section>
 
-A uniform interface to all generators is going to be developed within the \texttt{EvtGen}. 
+        <section>
+            <h2 class="hdr hdr2">Parametric detector model</h2>
+            Standalone python package <span class="package_name">SctParSim</span> is being developed for SCT detector parametric simulation. It supports <a href="#edm">SCT EDM</a> and depends only on standard python libraries <span class="package_name">numpy</span> and <span class="package_name">matplotlib</span>.
+        </section>
 
-Output of the primary event generators is expected to be in the \texttt{HepMC3}\cite{hepmc3} format. A dedicated \texttt{Aurora} algorithm converts events data from \texttt{HepMC3} 
-format to \texttt{SCT EDM} and stores them on disc or feed them in the detector simulation algorithm.
+        <section>
+            <h2 class="hdr hdr2">Event display</h2>
+            <p>The <span class="package_name">DD4Hep</span> component <span class="package_name">DDEve</span> is used as a base for Event and Detector Geometry Display tool. It allows to draw a 3D-view or 2D cross sections of the detector and its subsystems, simulated particle tracks and hits, real hits read from the detector (in future), reconstructed objects, etc.</p>
+        </section>
 
-%%%  Detector geometry description  %%%
-\section{Detector geometry description}\label{sec:geom}
-A uniform detector geometry description should be provided for all software modules.
-Each detector subsystem will have a corresponding geometry software package, or, in case of several options,
-a separate package for each option. The packages are to be implemented by subsystems experts.
+        <section>
+            <h2 class="hdr hdr2">Offline data analysis</h2>
+            <p>Set of high quality offline data analysis tools is a crucial condition for getting the proper physics yield from the experiment. Closeness of experimental conditions of the Belle II detector and advanced level of analysis software in this experiment is a perfect opportunity for SCT experiment to benefit from existing solutions. Belle II collaboration kindly gave us access to their source code. We work on adaptation of the Belle II analysis software to the SCT experiment.</p>
+        </section>
 
-The \texttt{DD4Hep}\cite{dd4hep} toolkit is our choice for this task. 
-
-%%%    Detector response simulation   %%%
-\section{Detector response simulation}\label{sec:sim}
-The detector simulation program uses \texttt{Geant4}\cite{geant} for particle propagation and hit generation.
-\texttt{DD4Hep} provides a special tool \texttt{DDG4} to supply the uniformed geometry description
-to \texttt{Geant4}.
-
-Digitization, i. e. conversion of hits generated by \texttt{Geant4} to a form of data read 
-from real detector hardware,
-is performed by ad-hoc algorithms developed by subsystems experts.
-If possible, the algorithms could be based on methods provided by \texttt{DD4Hep}.
-(Backward contribution to \texttt{DD4Hep} is also expected here.)
-
-%%%     Calibration and Conditions      %%%
-\section{Calibrations and Conditions databases}
-Database interfaces are going to be based on Gaudi.
-The concrete details of realization are not chosen at the moment.
-
-%%%        Event reconstruction        %%%
-\section{Event reconstruction}\label{sec:reco}
-The \texttt{DD4Hep} will be used in reconstruction algorithms as a geometry provider.
-
-Each subsystem group should provide a reconstruction package for its subsystem.
-Among the options for the track reconstruction package 
-\texttt{GenFit}\cite{genfit} and \texttt{ACTS}\cite{acts} are considered at the moment.
-
-Calorimeter reconstruction is based on a generic topo-cluster technique.
-
-There is no final solution yet for Cherenkov light rings reconstruction. Various algorithms including 
-parallel processing at FPGA are under investigation.
-
-%%%  Parametric detector model %%%
-\section{Parametric detector model}\label{sec:param}
-Standalone \texttt{python} package \texttt{SctParSim} is being developed for SCT detector parametric simulation. It supports SCT \texttt{EDM} and depends only on standard \texttt{python} libraries \texttt{numpy} and \texttt{matplotlib}.
-
-\section{Event display}
-The \texttt{DD4Hep} component \texttt{DDEve} is used as a base for Event and Detector Geometry
-Display tool. It allows to draw a 3D-view or 2D cross sections of the detector and its subsystems,
-simulated particle tracks and hits, real hits read from the detector (in future), reconstructed
-objects, etc. 
-
-%%% Offline data analysis %%%
-\section{Offline data analysis}\label{sec:analysis}
-Set of high quality offline data analysis tools is a crucial condition for getting the proper physics yield from the experiment. Closeness of experimental conditions of the Belle II detector and advanced level of analysis software in this experiment is a perfect opportunity for SCT experiment to benefit from existing solutions. Belle II collaboration kindly gave us access to their source code. We work on adaptation of the Belle II analysis software to the SCT experiment.
-
-
-\section{Build and version control systems}
-Build system of the software stack is based on a similar one from the ATLAS\cite{ATLAS}
-experiment. External standard HEP packages are build using LCGCMake\cite{lcgcmake} infrastructure.
-The software development workflow utilizes
-\texttt{GitLab}\cite{gitlib} as a version control system.
-At some point a continuous integration mechanism (most likely, GitLab-based)
-allowing regular test builds and merge requests processing
-is going to be introduced.
+        <section id="build_system">
+            <h2 class="hdr hdr2">Build and version control systems</h2>
+            <p>Build system of the software stack is based on a similar one from the <span class="experiment_name">ATLAS</span> experiment. External standard HEP packages are build using <span class="package_name">LCGCMake</span> infrastructure. The software development workflow utilizes <a href="http://gitlab.com" target="_blank" rel="noopener noreferrer">GitLab</a>  as a version control system. At some point a continuous integration mechanism (most likely, GitLab-based) allowing regular test builds and merge requests processing is going to be introduced.</p>
+        </section>
     </main>
 
     <footer class="footer">
-        <div class="copyright">&copy; BINP 2020</div>
+        <div class="copyright">BINP 2020</div>
         <div class="contacts">
             <a href="mailto:mailme@inp.nsk.su" class="email">Contact us</a>
         </div>

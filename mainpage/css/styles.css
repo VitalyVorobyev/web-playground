@@ -165,3 +165,16 @@ p {
 .overline {
     text-decoration: overline;
 }
+
+.package_name {
+    font-family: monospace;
+}
+
+.experiment_name {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.copyright::before {
+    content: "\A9";
+    margin-right: 3px;
+}
