@@ -4,6 +4,7 @@
 @import 'images.css';
 @import 'tables.css';
 @import 'footer.css';
+@import 'sw_scheme.css';
 
 body {
     display: grid;

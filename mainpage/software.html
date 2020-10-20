@@ -72,6 +72,64 @@
                 <li>build system and release management software</li>
             </ul>
             <p>Main relations between the components of detector software are illustrated in scheme</p>
+
+            <div class="sw__scheme">
+                <div class="scheme__box"><p>Event generators</p></div>
+                <div></div>
+                <div class="scheme__box"><p>Phsics analysis</p></div>
+                <div></div><div></div>
+
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_bt"></div>
+                </div>
+                <div></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_bt"></div>
+                    <div class="scheme_arrow_up"></div>
+                </div>
+                <div></div><div></div>
+
+                <div class="scheme__box"><p>HepMC to EDM</p></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_rt"></div>
+                </div>
+                <div class="scheme__box"><p>Storage</p></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_lt"></div>
+                </div>
+                <div class="scheme__box"><p>Reconstruction</p></div>
+
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_bt"></div>
+                </div>
+                <div></div><div></div><div></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_up"></div>
+                </div>
+
+                <div class="scheme__box"><p>Simulation</p></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_rt"></div>
+                </div>
+                <div class="scheme__box"><p>Digitization</p></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_rt"></div>
+                </div>
+                <div class="scheme__box"><p>Calibration and alignment</p></div>
+
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_up"></div>
+                </div>
+                <div></div><div></div><div></div>
+                <div class="scheme_arrow">
+                    <div class="scheme_arrow_up"></div>
+                </div>
+
+                <div class="scheme__box"><p>Detector geometry</p></div>
+                <div></div><div></div><div></div>
+                <div class="scheme__box"><p>Conditions DB</p></div>
+            </div>
+
             <p>Large data flow and large volume of stored data are expected during operation of the experiment. It imposes strict requirement on the SCT EDM. It should be carefully designed to provide fast I/O, optimal event size and standardized interface for the data analysis algorithms.</p>
             <p>We adopt the following guiding principles to work on the detector software:</p>
             <ol>
