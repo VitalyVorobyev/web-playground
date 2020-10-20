@@ -21,8 +21,22 @@ main {
    width: 100%;
 }
 
-p {
+@font-face {
+    font-family: "Petrona";
+    src: url("../fonts/Petrona/Petrona-VariableFont_wght.ttf");
+}
+
+@font-face {
+    font-family: "Crimson Pro";
+    /* src: url("../fonts/Crimson_Pro/CrimsonPro-VariableFont_wght.ttf"); */
+    src: url("../fonts/Crimson_Pro/static/CrimsonPro-Light.ttf")
+}
+
+p, ul, ol {
    margin: 16px 0;
+   line-height: 1.4em;
+   letter-spacing: 0.02rem;
+   font-family: "Crimson Pro", serif;
 }
 
 /* Jumbotron */

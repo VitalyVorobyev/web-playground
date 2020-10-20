@@ -49,7 +49,7 @@
         <h1 class="hdr hdr1">SCT Detector Software</h1>
         <section id="intro">
             <h2 class="hdr hdr2">Introduction</h2>
-            <p>Super charm-tau factory is a symmetric electron-positron collider with a single collision point operating in the energy range between \(\sqrt{s}=2\) and \(6~\mathrm{GeV}\). This energy range covers the charmonium family (including the \(J^{PC}=1^{--}\) states \(J/\psi\), \(\psi(2S)\), \(\psi(3770)\) and others that can be produced directly), several open charm hadrons thresholds (\(D^{(*)0}\overline{D}{}^{(*)0}\), \(D^{(*)+}D^{(*)-}\), \(\Lambda_c\overline{\Lambda}_c\) etc.) and the \(\tau\) lepton threshold, providing the rich physics program. Projected luminosity of the collider is \(10^{35}~\mathrm{cm}^{-2}\mathrm{s}^{-1}\). Maximal event rate to deliver in the data storage is expected to be more than \(350~\mathrm{kHz}\) for operation at the \(J/\psi\) resonance.</p>
+            <p>Super charm-tau factory is a symmetric electron-positron collider with a single collision point operating in the energy range between \(\sqrt{s}=2\) and \(6~\mathrm{GeV}\). This energy range covers the charmonium family (including the \(J^{PC}=1^{--}\) states \(J/\psi\), <nobr>\(\psi(2S)\),</nobr> \(\psi(3770)\) and others that can be produced directly), several open charm hadrons thresholds (\(D^{(*)0}\overline{D}{}^{(*)0}\), \(D^{(*)+}D^{(*)-}\), \(\Lambda_c\overline{\Lambda}_c\) etc.) and the \(\tau\) lepton threshold, providing the rich physics program. Projected luminosity of the collider is \(10^{35}~\mathrm{cm}^{-2}\mathrm{s}^{-1}\). Maximal event rate to deliver in the data storage is expected to be more than \(350~\mathrm{kHz}\) for operation at the \(J/\psi\) resonance.</p>
             <p>The collision point is equipped with a universal nparticle detector covering nearly full solid angle. It contains all traditional subsystems:</p>
             <ul>
                 <li>tracking system composed of the drift chamber and inner tracker. Two alternative technologies for the inner tracker are under discussion: time projection chamber (TPC) and cylindrical gas electron multiplier (cGEM);</li>
@@ -90,8 +90,8 @@
 
         <section id="edm">
             <h2 class="hdr hdr2">Event Data Model</h2>
-            <p>The SCT detector event data model is implemented as C++ plain-old-data (POD) objects. Data persistence is implemented via the \texttt{ROOT}\cite{root} \texttt{TTree} format. This format provides fast and straightforward I/O interface.</p>
-            <p>The EDM objects are defined in a single \texttt{yaml}\cite{yaml} file. \texttt{PODIO}\cite{podio} package is used to generate actual C++ classes. Described scheme is embedded in the \texttt{Aurora} framework via the \texttt{DataModel} package.</p>
+            <p>The SCT detector event data model is implemented as C++ plain-old-data (POD) objects. Data persistence is implemented via the <span class="package_name">ROOT</span> <code>TTree</code> format. This format provides fast and straightforward I/O interface.</p>
+            <p>The EDM objects are defined in a single <span class="package_name">yaml</span> file. <span class="package_name">PODIO</span> package is used to generate actual C++ classes. Described scheme is embedded in the <span class="package_name">Aurora</span> framework via the <span class="package_name">DataModel</span> package.</p>
         </section>
 
         <section id="gen">
