@@ -16,6 +16,14 @@
     --special-semi-light: #81c36d;
     --special-light: #455f0d;
     --special-extra-light: #c6f523;
+    
+    /* https://hookagency.com/website-color-schemes/ */
+    --red-highlight: #b73225;
+    --blue-minded: #004e7c;
+    --light-blue-minded: #68afd8;
+    --maroon-6: #591c0b;
+    --grey-water: #5c5f58;
+    --lighter-grey: #dce1e3;
 }
 
 /* Header */

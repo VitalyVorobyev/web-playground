@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="figs/binplogo0.svg"/>
+    <link rel="stylesheet" href="css/styles.css" class="style">
+    <title>CREMLINplus</title>
+</head>
+<body>
+    <header>
+        <div class="header__menu">
+            <div class="header__logo">
+                <img src="figs/binplogo0.svg" alt="" class="logo__image">
+                <p class="logo__title">SCT Experiment</p>
+            </div>
+            <nav class="menu">
+                <button class="menu__button" type="button">
+                    <svg class="menu__icon" xmlns="http://www.w3.org/2000/svg" width="0", height="0">
+                        <symbol id="lines" viewBox="0 0 44 44"><path d="M3,3h38m-38,19h38m-38,19h38"/></symbol>
+                        <symbol id="cross" viewBox="0 0 44 44"><path d="M3,3,41,41M3,41,41,3"/></symbol>
+                    </svg>
+                    <svg class="menu__button__icon">
+                        <use class="menu__button__lines" href="#lines"></use>
+                        <use class="menu__button__cross" href="#cross"></use>
+                    </svg>
+                </button>
+                <ul class="menu__list" id="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--home" href="index.html">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--inactive" href="#">Internal</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--current" href="#">Cremlinplus</a>
+                    </li>
+                </ul>
+                <div class="menu__list logins">
+                    <a class="menu__link" href="#">Register</a>
+                    <a class="menu__link" href="#">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="hdr hdr1">SCT in the CREMLINplus project</h1>
+        <p>Collaboration around SCT is partially supported by the <a href="http://www.cremlinplus.eu" target="_blank" rel="noopener noreferrer">Cremlinplus EU project</a>. Cremlinplus working package 5 "Joint technology development around SCT and future lepton colliders" has the following objectives:</p>
+        <ul>
+            <li>To support and develop EU and Russian scientific cooperation in the SCT project</li>
+            <li>To make an example of good practice on establishing collaboration around Russian RI with extensive participation of EU institutions</li>
+            <li>To support joint EU – Russian efforts on development of future lepton colliders</li>
+            <li>To increase visibility of SCT project in EU and world-wide scientific and decision-makers communities</li>
+        </ul>
+
+        <div class="sections__container">
+            <a class="btn-grad" href="#">WP5 Description</a>
+            <a class="btn-grad" href="#">WP5 Consortium</a>
+            <a class="btn-grad" href="#">WP5 Events</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="copyright">BINP 2020</div>
+        <div class="contacts">
+            <a href="mailto:mailme@inp.nsk.su" class="email">Contact us</a>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            const menuButton = document.querySelector('.menu__button');
+            const menu = document.querySelector('.menu');
+
+            menuButton.addEventListener('click', () => {
+                menuButton.classList.toggle('expanded');
+                menu.classList.toggle('menu--open');
+            });
+        })();
+    </script>
+</body>
+</html>
