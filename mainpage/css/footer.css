@@ -45,9 +45,8 @@
 }
 
 .eu__ref__img {
-    width: 100px;
+    width: 80px;
     min-width: 40px;
-    height: auto;
     display: inline;
     margin: 0 10px;
 }
