@@ -210,6 +210,7 @@ p, ul, ol {
 @media (max-width: 650px) {
     .cplus-hdr {
         flex-direction: column;
+        margin-bottom: 0;
     }
 }
 
