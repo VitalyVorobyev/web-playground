@@ -223,3 +223,41 @@ p, ul, ol {
 .cplus__logo__img {
     width: 100%;
 }
+
+
+/* Accordion */
+
+.btn__acc {
+    background-color: #eee;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    font-size: 0.8em;
+    letter-spacing: 0.02rem;
+}
+
+.btn__acc::before {
+    content: '\002b';
+    color: var(--blue-minded);
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.btn__acc.active::before {
+    content: '\2212';
+}
+
+.active, .btn__acc:hover {
+    background-color: var(--special-neutral2);
+}
+
+.panel {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
