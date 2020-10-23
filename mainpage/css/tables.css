@@ -11,8 +11,6 @@
 td {padding: 4px;}
 th {padding: 10px;}
 
-/* Table borders */
-
 .sct__thead {
     border-bottom: 1px solid var(--special-dark-60a);
     font-family: sans-serif;
