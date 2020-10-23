@@ -198,6 +198,10 @@ p, ul, ol {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.text-center {
+    text-align: center;
+}
+
 /* Cremlinplus header */
 
 .cplus-hdr {

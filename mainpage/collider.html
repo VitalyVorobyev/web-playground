@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="figs/binplogo0.svg"/>
     <link rel="stylesheet" href="css/collider.css" class="style">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <title>SCT Collider</title>
 </head>
 <body>
@@ -76,40 +79,35 @@
             </ul>
         </article>
 
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
+        <table class="sct__table text-center">
+            <thead>
+                <tr class="sct__thead">
                     <th>Parameter</th>
                     <th>1.0 GeV</th>
                     <th>1.5 GeV</th>
                     <th>2.0 GeV</th>
                     <th>2.5 GeV</th>
-                    <th>Units</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>Perimeter, &Pi;</td>
-                    <td class="text-center" colspan="4">813.1</td>
-                    <td>m</td>
+            <tbody class="sct__tbody">
+                <tr class="sct__trow">
+                    <td>Perimeter, \(\Pi\) (m)</td>
+                    <td colspan="4">813.1</td>
                 </tr>
-                <tr>
-                    <td>Time of revolution, &tau;<sub>0</sub></td>
-                    <td class="text-center" colspan="4">2.712</td>
-                    <td>&mu;s</td>
+                <tr class="sct__trow">
+                    <td>Time of revolution, \(\tau_0\) (\(\mu\)s)</td>
+                    <td colspan="4">2.712</td>
                 </tr>
-                <tr>
-                    <td>RF frequency, f<sub>0</sub></td>
-                    <td class="text-center" colspan="4">368.7</td>
-                    <td>kHz</td>
+                <tr class="sct__trow">
+                    <td>RF frequency, \(f_0\) (kHz)</td>
+                    <td colspan="4">368.7</td>
                 </tr>
-                <tr class="table-success">
-                    <td>Luminosity, L</td>
-                    <td>0.47&middot;10<sup>35</sup></td>
-                    <td>0.86&middot;10<sup>35</sup></td>
-                    <td>1.02&middot;10<sup>35</sup></td>
-                    <td>1.02&middot;10<sup>35</sup></td>
-                    <td>cm<sup>-2</sup>s<sup>-1</sup></td>
+                <tr class="sct__trow">
+                    <td>Luminosity, \(L\) (\(10^{35}\) cm\({}^{-2}\)s\({}^{-1}\))</td>
+                    <td>0.47</td>
+                    <td>0.86</td>
+                    <td>1.02</td>
+                    <td>1.02</td>
                 </tr>
             </tbody>
         </table>

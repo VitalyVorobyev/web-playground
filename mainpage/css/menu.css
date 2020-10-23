@@ -11,6 +11,8 @@
     --special-extra-dark: #316491;
     --special-dark: #0d0d0e;
     --special-dark-10a: rgba(59, 132, 187, 0.1);
+    --special-dark-30a: rgba(59, 132, 187, 0.3);
+    --special-dark-60a: rgba(59, 132, 187, 0.6);
     --special-semi-dark: #42a0da;
     --special-neutral: #61afb4;
     --special-neutral2: #92d6db;
