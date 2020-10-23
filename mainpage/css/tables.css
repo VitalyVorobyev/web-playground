@@ -18,6 +18,8 @@ th {padding: 10px;}
     font-family: sans-serif;
     font-size: 0.9em;
     transition: 0.2s;
+    background-color: var(--basic-light);
+    color: var(--special-extra-dark);
 }
 
 .sct__trow {
