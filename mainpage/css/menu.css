@@ -84,11 +84,16 @@ header {
 }
 
 .menu__link {
-    color: var(--basic-dark);
+    color: var(--special-dark);
     text-decoration: none;
     font: 1.4rem sans-serif;
     letter-spacing: 0.02em;
     margin: 0 10px;
+}
+
+.menu__link--inactive {
+    color: var(--basic-neutral);
+    cursor: default;
 }
 
 .menu__link--current {font-weight: bold;}

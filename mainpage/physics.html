@@ -7,9 +7,8 @@
     <link rel="stylesheet" href="css/styles.css" class="style">
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <title>SCT Experiment</title>
+    <title>SCT Physics</title>
 </head>
-
 <body>
     <header>
         <div class="header__menu">
@@ -30,7 +29,7 @@
                 </button>
                 <ul class="menu__list" id="menu__list">
                     <li class="menu__item">
-                        <a class="menu__link menu__link--home menu__link--current" href="index.html">Home</a>
+                        <a class="menu__link menu__link--home" href="index.html">Home</a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link menu__link--inactive" href="#">Internal</a>
@@ -48,26 +47,52 @@
     </header>
 
     <main>
-        <div class="jumbotron">
-            <h1 class="title">Super Charm Tau Factory</h1>
-            <h2 class="subtitle">Electron-positron collider for studying charmed hadrons and tau lepton</h2>
-            <div class="cdr__links">
-                <p class="cdr__title">CDR [pdf]</p>
-                <a href="#" class="cdr__link cdr__link1">vol. 1</a>
-                <a href="#" class="cdr__link cdr__link2">vol. 2</a>
-            </div>
-        </div>
-        <div class="sections__container">
-            <a class="btn-grad" href="physics.html">Physics</a>
-            <a class="btn-grad" href="detector.html">Detector</a>
-            <a class="btn-grad" href="collider.html">Collider</a>
-            <a class="btn-grad" href="software.html">Software</a>
-            <a class="btn-grad btn-grad__inactive" href="#">Publications</a>
-            <a class="btn-grad btn-grad__inactive" href="#">Collaboration</a>
-        </div>
+        <h1 class="hdr hdr1">SCT Physics</h1>
 
-        <div class="intro">
-            <p>Super charm-tau factory is a symmetric electron-positron collider with a single collision point operating in the energy range between \(\sqrt{s}=2\) and \(6~\mathrm{GeV}\). This energy range covers the charmonium family, several open charm hadrons thresholds, and <nobr>the \(\tau\)</nobr> lepton threshold, providing the rich physics program.</p>
+        <p>The physics program of the SCT experiment is discussed in detail in <a href="http://" target="_blank" rel="noopener noreferrer">CDR, vol. 1</a>. It can be roughly divied into three parts:</p>
+        <ol>
+            <li>Physics of the charm quark</li>
+            <li>Physics of the tau lepton</li>
+            <li>Precision measuerment of QCD</li>
+        </ol>
+        <p>The cards below show the main topics of the SCT physics program.</p>
+
+        <div class="cards__container">
+            <div class="card card__330px">
+                <h2 class="hdr card__title">Charm</h2>
+                <div class="card__text">
+                    <ul>
+                        <li>Measurement of the strong phases of \(D^0\) decay amplitudes</li>
+                        <li>Measurement of the absolute branching fractions</li>
+                        <li>Searches for rare and forbidden decays of the charm quark</li>
+                        <li>Measurement of the CP symmetry breaking in charm decay and production</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card card__330px">
+                <h2 class="hdr card__title">Tau</h2>
+                <div class="card__text">
+                    <ul>
+                        <li>Precision measurement of <nobr>the \(\tau\)</nobr> lepton properties</li>
+                        <li>Measurement of the Michel parameters, tests of the lepton universality</li>
+                        <li>Precision measurement of <nobr>hadronic \(\tau\)</nobr> decays</li>
+                        <li>Search for CP symmetry breaking <nobr>in \(\tau\)</nobr> production and decays</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card card__330px">
+                <h2 class="hdr card__title">QCD</h2>
+                <div class="card__text">
+                    <ul>
+                        <li>Physics of highly-exited quarkonium</li>
+                        <li>Hadronic molecular states</li>
+                        <li>Baryon interaction at threshold</li>
+                        <li>Search for glueballs in decays <nobr>of \(J/\psi\)</nobr> <nobr>and \(\phi(2S)\) </nobr> </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </main>
 
