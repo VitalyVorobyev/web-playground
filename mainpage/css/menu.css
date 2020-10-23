@@ -146,7 +146,10 @@ header {
         display: none;
     }
 
-    .menu__list {display: none;}
+    .menu__list {
+        display: none;
+        box-shadow: 2px 2px 2px var(--special-dark);
+    }
 
     .menu--open .menu__list {
         display: flex;

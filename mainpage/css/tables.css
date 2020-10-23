@@ -26,7 +26,7 @@ th {padding: 10px;}
     transition: 0.2s;
 }
 
-.sct__thead:hover, .sct__trow:hover {
+.sct__trow:hover {
     background-color: var(--special-neutral2);
 }
 
