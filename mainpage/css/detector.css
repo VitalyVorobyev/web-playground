@@ -1,5 +1,12 @@
 @import 'styles.css';
 
 #sctd__scheme {
-    width: 90%;
+    width: 97%;
+}
+
+#body {
+    position: absolute;
+    height: 100px;
+    bottom: 50px;
+    left: 70px;
 }

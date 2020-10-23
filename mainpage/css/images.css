@@ -2,7 +2,7 @@
 figure {
     text-align: center;
     border: 1px solid var(--special-extra-dark);
-    border-radius: 30px;
+    border-radius: 20px;
     padding: 2px;
     box-shadow: 2px 2px 2px var(--basic-neutral);
     width: 50%;
@@ -14,6 +14,7 @@ figure {
 }
 
 .rfloat {
+    position: relative;
     float: right;
     margin: 0 3px 3px 8px;
 }
