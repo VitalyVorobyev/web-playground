@@ -50,10 +50,12 @@
         <h1 class="hdr hdr1">Accelerator Complex</h1>
 
         <article class="article">
-                <figure class="sct__figure rfloat">
+            <div class="modal__figure rfloat__50">
+                <figure class="sct__figure modal__content">
                     <img class="sct__image" src="figs/sctf.png" alt="SCT accelerator complex" title="SCT accelerator complex">
                     <figcaption class="figcaption">Fig. 1. Scheme of SCT factory complex</figcaption>
                 </figure>
+            </div>
                 <p class="main_text">SCT factory is a symmetric electron-positron collider consisting of the following installations:</p>
                 <ol>
                     <li>Positron injector with cooling storage ring</li>
@@ -135,6 +137,27 @@
                 menu.classList.toggle('menu--open');
             });
         })();
+
+        document.body.addEventListener('keydown', function(e) {
+            console.log('keydown');
+            if (e.key == 'Escape') {
+                Array.from(document.querySelectorAll('.modal__figure')).forEach(
+                    modal => {if (modal.classList.contains('active')) {
+                        modal.classList.toggle('active');
+                        document.querySelector('body').classList.toggle('noscroll');
+                    }
+                });
+            }
+        });
+
+        Array.from(document.querySelectorAll('.modal__figure')).forEach(
+            modal => {
+                modal.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    document.querySelector('body').classList.toggle('noscroll');
+                })
+            }
+        );
     </script>
 </body>
 </html>

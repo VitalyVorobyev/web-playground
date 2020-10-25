@@ -31,6 +31,10 @@
 
 /* Header */
 
+html {
+    padding-left: calc(100vw - 100%);
+}
+
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -288,46 +292,6 @@ p, ul, ol {
 
 .hdr1 {font: 2.5rem sans-serif;}
 .hdr2 {font: 2.0rem sans-serif;}
-
-/* Images */
-
-.img__top__right {
-    display: grid;
-    grid-template: "text1 scheme" "text2 text2";
-    grid-template-columns: 14fr 16fr;
-    grid-gap: 10px
-}
-
-.sct__figure {
-    text-align: center;
-    border: 1px solid var(--special-extra-dark);
-    border-radius: 10px;
-    padding: 2px;
-    box-shadow: 2px 2px 2px var(--basic-neutral);
-    width: 50%;
-}
-
-.figcaption {
-    font-size: 1.2rem;
-    margin: 8px;
-}
-
-.rfloat {
-    position: relative;
-    float: right;
-    margin: 0 3px 3px 8px;
-}
-
-.sct__image {
-    width: 97%;
-}
-
-#detector_scale_body {
-    position: absolute;
-    height: 100px;
-    bottom: 45px;
-    left: 50px;
-}
 
 /* Tables */
 
@@ -692,4 +656,87 @@ th {padding: 10px;}
 
 .hdr.card__title {
     text-shadow: none;
+}
+
+/* Images */
+.sct__figure {
+    text-align: center;
+    border: 1px solid var(--special-extra-dark);
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 2px 2px 2px var(--basic-neutral);
+}
+
+.figcaption {
+    font-size: 1.2rem;
+    margin: 8px;
+}
+
+.rfloat__50 {
+    position: relative;
+    width: 50%;
+    float: right;
+    margin: 0 3px 3px 8px;
+}
+
+.sct__image {
+    max-width: 97%;
+    max-height: 60vh;
+}
+
+.scale__wrapper {
+    position: relative;
+}
+
+#detector_scale_body {
+    position: absolute;
+    height: 23%;
+    bottom: 0;
+    left: 10%;
+}
+
+.modal__figure {
+    cursor: pointer;
+}
+
+/* Modal figures */
+.modal__figure.active {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    margin: 0;
+    animation: modal__image__animation 0.4s ease;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.modal__figure.active .modal__content {
+    background-color: #fefefe;
+    float: none;
+    margin: 10% auto 0; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.modal__figure.active .modal__close {
+    display: inline;
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+@keyframes modal__image__animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
