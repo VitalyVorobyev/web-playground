@@ -665,6 +665,7 @@ th {padding: 10px;}
     border-radius: 10px;
     padding: 2px;
     box-shadow: 2px 2px 2px var(--basic-neutral);
+    margin: 0;
 }
 
 .figcaption {
@@ -721,10 +722,11 @@ th {padding: 10px;}
 .modal__figure.active .modal__content {
     background-color: #fefefe;
     float: none;
-    margin: 10% auto 0; /* 15% from the top and centered */
+    margin: 5% auto 0;
     padding: 20px;
     border: 1px solid #888;
-    max-width: 80%;
+    /* max-width: 80%; */
+    width: max-content;
     max-height: 80%;
 }
 
