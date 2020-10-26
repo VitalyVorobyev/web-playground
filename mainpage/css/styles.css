@@ -47,7 +47,7 @@ body {
 }
 
 header {
-    margin: 0 -18px;
+    margin: 0 -40px;
     background-color: #e9eaeb;
     min-width: 420px;
 }
@@ -682,7 +682,7 @@ th {padding: 10px;}
 
 .sct__image {
     max-width: 97%;
-    max-height: 60vh;
+    max-height: 80vh;
 }
 
 .scale__wrapper {
