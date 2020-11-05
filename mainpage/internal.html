@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg" href="figs/binplogo0.svg"/>
+    <link rel="stylesheet" href="css/styles.css" class="style">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <title>SCT Internal</title>
+</head>
+<body>
+    <header>
+        <div class="header__menu">
+            <div class="header__logo">
+                <img src="figs/binplogo0.svg" alt="BINP logo" class="logo__image">
+                <p class="logo__title">SCT Experiment</p>
+            </div>
+            <nav class="menu">
+                <button class="menu__button" type="button">
+                    <svg class="menu__icon" xmlns="http://www.w3.org/2000/svg" width="0", height="0">
+                        <symbol id="lines" viewBox="0 0 44 44"><path d="M3,3h38m-38,19h38m-38,19h38"/></symbol>
+                        <symbol id="cross" viewBox="0 0 44 44"><path d="M3,3,41,41M3,41,41,3"/></symbol>
+                    </svg>
+                    <svg class="menu__button__icon">
+                        <use class="menu__button__lines" href="#lines"></use>
+                        <use class="menu__button__cross" href="#cross"></use>
+                    </svg>
+                </button>
+                <ul class="menu__list" id="menu__list">
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--home" href="index.html">Home</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--internal menu__link--current" href="#">Internal</a>
+                    </li>
+                    <li class="menu__item">
+                        <a class="menu__link menu__link--cremlinplus" href="cremlinplus.html">Cremlinplus</a>
+                    </li>
+                </ul>
+                <div class="menu__list logins">
+                    <a class="menu__link" href="#">Register</a>
+                    <a class="menu__link" href="#">Login</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="hdr hdr1">SCT Internal</h1>
+        
+        <section>
+            <h2 class="hdr hdr2">Collaboration tools</h1>
+                <ul class="grid__10px grid__col4">
+                    <li class="btn-grad">Wiki server</li>
+                    <li class="btn-grad">Git server</li>
+                    <li class="btn-grad">Indico server</li>
+                    <li class="btn-grad">Software development server</li>
+                </ul>
+        </section>
+            
+        <section>
+            <h2 class="hdr hdr2">Working groups</h1>
+                <ul class="grid__10px grid__col3">
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Physics WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:vvorob@inp.nsk.su">Vitaly Vorobyev</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Software WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:A.M.Suharev@inp.nsk.su">Andrey Suharev</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Inner tracker WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:L.I.Shekhtman@inp.nsk.su">Lev Shekhtman</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Central tracker WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:C.Yu.Todyshev@inp.nsk.su">Kornely Todyshev</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">PID WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:A.Yu.Barnyakov@inp.nsk.su">Alexander Barnyakov</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Calorimeter WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:D.A.Epifanov@inp.nsk.su">Denis Epifanov</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Muon/K long system WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:uglov.timofey@gmail.com">Timofey Uglov</a>
+                        </div>
+                    </li>
+                    <li class="wg__card">
+                        <h3 class="hdr hdr3 wg__title">Beam background WG</h3>
+                        <div class="wg__coord">Coordinator:
+                            <a class="email" href="mailto:B.A.Shwartz@inp.nsk.su">Boris Shwartz</a>
+                        </div>
+                    </li>
+                </ul>
+        </section>
+
+        <section>
+            <h2 class="hdr hdr2">Email lists</h1>
+            <ul class="grid__10px grid__col3">
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Detector general</h3>
+                    <a href="mailto:ctd@inp.nsk.su" class="email">ctd@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Tracking</h3>
+                    <a href="mailto:ctd-tracking@inp.nsk.su" class="email">ctd-tracking@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">PID</h3>
+                    <a href="mailto:ctd-pid@inp.nsk.su" class="email">ctd-pid@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Calorimeter</h3>
+                    <a href="mailto:ctd-ecal@inp.nsk.su" class="email">ctd-ecal@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Physics</h3>
+                    <a href="mailto:ctd-physics@inp.nsk.su" class="email">ctd-physics@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Muon system</h3>
+                    <a href="mailto:ctd-muon@inp.nsk.su" class="email">ctd-muon@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+                <li class="email_list__card">
+                    <h3 class="hdr hdr3 wg__title">Beam background</h3>
+                    <a href="mailto:ctd-background@inp.nsk.su" class="email">ctd-background@inp.nsk.su</a>
+                    <a class="btn__subscribe" role="button" href="#" target="_blank">Subscribe</a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="hdr hdr2">Documents</h1>
+                <ul>
+                    <li>SCT Eurostratery input</li>
+                    <li>SCT Snowmass2021 LoI</li>
+                </ul>
+        </section>
+    </main>
+        
+    <footer class="footer">
+        <div class="copyright">BINP 2020</div>
+        <div class="contacts">
+            <a href="mailto:mailme@inp.nsk.su" class="email">Contact us</a>
+        </div>
+    </footer>
+
+    <script>
+        (() => {
+            const menuButton = document.querySelector('.menu__button');
+            const menu = document.querySelector('.menu');
+
+            menuButton.addEventListener('click', () => {
+                menuButton.classList.toggle('expanded');
+                menu.classList.toggle('menu--open');
+            });
+        })();
+    </script>
+</body>
+</html>
