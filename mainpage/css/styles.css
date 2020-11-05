@@ -20,13 +20,15 @@
     --special-light: #455f0d;
     --special-extra-light: #c6f523;
     
-    /* https://hookagency.com/website-color-schemes/ */
     --red-highlight: #b73225;
     --blue-minded: #004e7c;
     --light-blue-minded: #68afd8;
     --maroon-6: #591c0b;
     --grey-water: #5c5f58;
     --lighter-grey: #dce1e3;
+
+    --btn-background-color: #17a2b8;
+    --btn-hover-background-color: #117888;
 }
 
 /* Header */
@@ -499,7 +501,7 @@ th {padding: 10px;}
 }
 
 .btn-grad {
-    background: #17a2b8;
+    background: var(--btn-background-color);
     caret-color: transparent;
     padding: 25px 45px;
     box-sizing: border-box;
@@ -525,7 +527,7 @@ th {padding: 10px;}
 
 .btn-grad:hover:not(.btn-grad__inactive),
 .btn-grad:focus:not(.btn-grad__inactive) {
-    background: #117888;
+    background: var(--btn-hover-background-color);
 }
 
 .btn-grad:active {
@@ -790,7 +792,7 @@ th {padding: 10px;}
 .email_list__card {
     display: grid;
     grid-template-rows: 1.2fr 1fr 1fr;
-    border: 1px solid #004e7c;
+    border: 1px solid var(--blue-minded);
     border-radius: 6px;
     align-items: center;
     justify-items: center;
@@ -798,16 +800,15 @@ th {padding: 10px;}
 }
 
 .btn__subscribe {
-    /* border: 1px solid #004e7c; */
     border-radius: 6px;
     text-decoration: none;
     padding: 3px 9px;
     margin: 6px 0;
-    background: #17a2b8;
+    background: var(--btn-background-color);
     transition: 0.15s;
     color: var(--basic-white);
 }
 
 .btn__subscribe:hover {
-    background: #117888;
+    background: var(--btn-hover-background-color);
 }
