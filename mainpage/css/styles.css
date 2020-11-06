@@ -517,6 +517,7 @@ th {padding: 10px;}
     transition: 0.15s;
     display: grid;
     align-items: center;
+    height: 100%;
 }
 
 .btn-grad.btn-grad__inactive {
@@ -788,7 +789,6 @@ th {padding: 10px;}
 }
 
 /* SCT email lists */
-
 .email_list__card {
     display: grid;
     grid-template-rows: 1.2fr 1fr 1fr;
