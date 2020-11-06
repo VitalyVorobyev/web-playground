@@ -169,6 +169,10 @@ p, ul, ol {
     margin-right: 3px;
 }
 
+.menu__link--home:hover:before {
+    filter: opacity(0.6);
+}
+
 .menu__list {
     display: flex;
     list-style: none;
@@ -177,12 +181,16 @@ p, ul, ol {
     padding: 0;
 }
 
-.menu__link {
+.menu__link, .menu__user {
     color: var(--special-dark);
     text-decoration: none;
     font: 1.4rem sans-serif;
     letter-spacing: 0.02em;
     margin: 0 10px;
+}
+
+.menu__user {
+    color: var(--special-extra-dark);
 }
 
 .menu__link--inactive {
@@ -690,4 +698,129 @@ th {padding: 10px;}
 
 .hdr.card__title {
     text-shadow: none;
+}
+
+/* Images */
+.sct__figure {
+    text-align: center;
+    border: 1px solid var(--special-extra-dark);
+    border-radius: 10px;
+    padding: 2px;
+    box-shadow: 2px 2px 2px var(--basic-neutral);
+    margin: 0;
+}
+
+.figcaption {
+    font-size: 1.2rem;
+    margin: 8px;
+}
+
+.rfloat__50 {
+    position: relative;
+    width: 50%;
+    float: right;
+    margin: 0 3px 3px 8px;
+}
+
+.sct__image {
+    max-width: 97%;
+    max-height: 80vh;
+}
+
+.scale__wrapper {
+    position: relative;
+}
+
+#detector_scale_body {
+    position: absolute;
+    height: 25%;
+    bottom: 3%;
+    left: 10%;
+}
+
+.modal__figure {
+    cursor: pointer;
+}
+
+/* Modal figures */
+.modal__figure.active {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    margin: 0;
+    animation: modal__image__animation 0.4s ease;
+}
+
+.noscroll {
+    overflow: hidden;
+}
+
+.modal__figure.active .modal__content {
+    position: relative;
+    background-color: #fefefe;
+    float: none;
+    margin: 5% auto 0;
+    padding: 20px;
+    border: 1px solid #888;
+    width: max-content;
+    max-height: 80%;
+}
+
+@keyframes modal__image__animation {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+
+/* SCT working groups */
+
+.wg__card {
+    display: grid;
+    grid-template-rows: 1.5fr 1.2fr;
+    border: 1px solid #004e7c;
+    border-radius: 6px;
+    align-items: center;
+    justify-items: center;
+    padding: 3px;
+}
+
+.wg__title {
+    margin-bottom: 2px;
+}
+
+.wg__coord {
+    text-align: center;
+    margin-bottom: 6px;
+}
+
+/* SCT email lists */
+
+.email_list__card {
+    display: grid;
+    grid-template-rows: 1.2fr 1fr 1fr;
+    border: 1px solid var(--blue-minded);
+    border-radius: 6px;
+    align-items: center;
+    justify-items: center;
+    padding: 3px;
+}
+
+.btn__subscribe {
+    border-radius: 6px;
+    text-decoration: none;
+    padding: 3px 9px;
+    margin: 6px 0;
+    background: var(--btn-background-color);
+    transition: 0.15s;
+    color: var(--basic-white);
+}
+
+.btn__subscribe:hover {
+    background: var(--btn-hover-background-color);
 }
